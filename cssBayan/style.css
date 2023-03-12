@@ -1,0 +1,146 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    font-family: 'Roboto', sans-serif;
+}
+
+.accordion {
+    margin: auto;
+    padding: 2%;
+    width: 50%;
+    background-color: antiquewhite;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+label {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1%;
+    font-size: 1.2em;
+    color: blue;
+}
+
+input {
+    display: none;
+}
+
+.icon {
+    display: none;
+}
+
+.image {
+    align-self: center;
+    background-size: cover;
+    overflow: hidden;
+    transition: all 0.5s;
+    height: 0;
+}
+
+.accordion input:checked + label + .image {
+    align-self: center;
+    width: 250px;
+    height: 250px;
+    background-size: cover;
+    transition: all 0.8s;
+}
+
+.mem1 {
+    background-image: url(./image\ 1.png);
+}
+
+.mem2 {
+    background-image: url(./image\ 2.png);
+}
+
+.mem3 {
+    background-image: url(./image\ 3.png);
+}
+
+.mem4 {
+    background-image: url(./image\ 4.png);
+}
+
+.mem5 {
+    background-image: url(./image\ 5.png);
+}
+
+.divider {
+    border-bottom: 0.1em solid #B7B7B7;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+input:checked + label .icon {
+    transform: rotate(45deg);
+    transition: all 0.8s;
+}
+
+@media (max-width: 819px) {
+    label {
+      font-size: 0.8rem;
+    }
+
+    .accordion {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 820px) and (max-width: 1919px) {
+    label {
+      font-size: 1rem;
+    }
+
+    .accordion {
+        width: 60%;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) { 
+    label:hover .icon {
+    transform: rotate(45deg);
+    transition: all 0.8s;
+    }
+
+    label:hover, .container:hover {
+        cursor: pointer;
+    }
+
+    label:hover + .image {
+    align-self: center;
+    width: 250px;
+    height: 250px;
+    background-size: cover;
+    transition: all 0.8s;
+    }
+
+    .icon {
+        display: none;
+    }
+
+    label:hover, .container:hover label {
+        color: black;
+    }
+
+    label:hover .icon, .container:hover .icon {
+        display: block;
+    }
+}
